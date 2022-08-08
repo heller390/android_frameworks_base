@@ -1079,11 +1079,25 @@
                 tools:node="remove" />
         </provider>
 
-        <receiver android:name="com.android.settingslib.wifi.WifiTimeoutReceiver"
+        <activity
+            android:name=".ErrorReportActivity"
+            android:exported="true"
+            android:theme="@android:style/Theme.DeviceDefault.DayNight"
+            android:documentLaunchMode="always"
+            android:process=":ui"
+        >
+            <intent-filter>
+                <action android:name="android.intent.action.APP_ERROR" />
+            </intent-filter>
+        </activity>
+
+	<receiver android:name="com.android.settingslib.wifi.WifiTimeoutReceiver"
+
             android:exported="true">
             <intent-filter>
                 <action android:name="android.net.wifi.intent.TIMEOUT" />
             </intent-filter>
         </receiver>
+
     </application>
 </manifest>
