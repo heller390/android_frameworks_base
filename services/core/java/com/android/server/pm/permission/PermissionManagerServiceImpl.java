@@ -2807,7 +2807,7 @@ public class PermissionManagerServiceImpl implements PermissionManagerServiceInt
                     }
 
                     if (bp.isNormal() || bp.isSignature() || bp.isInternal()) {
-                        if ((bp.isNormal()
+                        if (bp.isNormal()
                                 || (bp.isSignature()
                                         && (!bp.isPrivileged() || CollectionUtils.contains(
                                                 isPrivilegedPermissionAllowlisted, permName))
